@@ -48,6 +48,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var _inputText = '';
   int _counter = 0;
 
   void _incrementCounter() {
@@ -73,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: const Text('I hate UI fonts Flutter'),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -95,6 +96,38 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            TextField(
+              style: TextStyle(
+                fontFamily: 'Yu Gothic',
+                fontSize: 48,
+              ),
+              onChanged: (text) {
+                setState(() {
+                  _inputText = text;
+                });
+              },
+            ),
+            Text(
+              _inputText,
+              style: TextStyle(
+                fontFamily: 'Yu Gothic UI',
+                fontSize: 48,
+              ),
+            ),
+            Text(
+              _inputText,
+              style: TextStyle(
+                fontFamily: 'Meiryo UI',
+                fontSize: 48,
+              ),
+            ),
+            Text(
+              _inputText,
+              style: TextStyle(
+                fontFamily: 'MS UI Gothic',
+                fontSize: 48,
+              ),
+            ),
             const Text(
               'You have pushed the button this many times:',
             ),
