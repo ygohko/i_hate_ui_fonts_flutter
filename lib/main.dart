@@ -31,8 +31,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final windowWidth = MediaQuery.of(context).size.width;
+    var margin = 100.0;
     var labelWidth = 100.0;
     var inputTextWidth = 500.0;
+    if (windowWidth > labelWidth + inputTextWidth + margin) {
+      inputTextWidth = windowWidth - labelWidth - margin;
+    } else if (windowWidth > labelWidth + inputTextWidth) {
+        margin = windowWidth - labelWidth - inputTextWidth;
+    } else {
+        labelWidth = windowWidth * 1.0 / 6.0;
+        inputTextWidth = windowWidth * 5.0 / 6.0;
+    }
     return Scaffold(
       appBar: AppBar(
         title: const Text('i_hate_ui_fonts_flutter'),
