@@ -51,7 +51,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var _inputText = 'testodesuuu';
+  var _inputText = '';
 
   @override
   Widget build(BuildContext context) {
@@ -102,6 +102,7 @@ class _HomePageState extends State<HomePage> {
                       fontFamily: 'Yu Gothic',
                       fontSize: 48,
                     ),
+                    autofocus: true,
                     onChanged: (text) {
                       setState(() {
                           _inputText = text;
